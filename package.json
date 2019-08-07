@@ -1,0 +1,34 @@
+{
+  "name": "node-voila-reverseproxy",
+  "version": "1.0.0",
+  "description": "Dynamically creates and reverse proxies to voila server instances",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zakaroni/node-voila-reverseproxy.git"
+  },
+  "keywords": [
+    "reverse",
+    "proxy",
+    "voila",
+    "python",
+    "backend",
+    "jupyter",
+    "notebook",
+    "notebooks"
+  ],
+  "author": "Zak Sadiq @ Arup",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zakaroni/node-voila-reverseproxy/issues"
+  },
+  "homepage": "https://github.com/zakaroni/node-voila-reverseproxy#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-http-proxy": "^1.5.1",
+    "request": "^2.88.0"
+  }
+}
