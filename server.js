@@ -52,5 +52,8 @@ function getNewInstanceID(){
 function spawnVoilaInstance(userUUID) {
     // spawn a unique voila instance based on the user's uuid
     var voilaInstance = spawn('voila', ['"C:\\Sites\\Notebooks"', '--port='+port, '--no-browser', '--base_url="/voila/'+userUUID+'"']); 
-    voilaInstance.on('exit', )
+    voilaInstance.on('exit', spawnVoilaInstance(userUUID));
+    voilaInstance.on('error', function(err) {
+        
+    })
 }
