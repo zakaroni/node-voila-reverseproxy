@@ -13,16 +13,18 @@ const spawn = require("child_process").spawn;
 // const cmd = require('node-cmd');
 
 
-// proxy new connections
+// proxy new connections if they navigate to the 
 const app = express();
-// app.use('/voila/\*', newVoilaUser());
-app.use('/voila/\*', () => {
+app.use('/', handleNewUser());
+
+function handleNewUser() {
+    // get a unique id for the user
     var instanceID = getNewInstanceID();
+    // start a voila server based on the 
     spawnVoilaInstance(instanceID);
-    proxy('http://localhost:8844/voila/'+instanceID);
-});
-
-
+    var proxyURL = 'http://localhost:' + voilaPort + '/voila/' + instanceID;
+    proxy(proxyURL);
+};
 // function getNewInstanceID() {
 //     // get number of instances
 //     const fs = require('fs');
